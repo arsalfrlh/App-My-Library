@@ -43,3 +43,6 @@ account
    password = 123
 
 ![alt text](https://github.com/arsalfrlh/App-My-Library/blob/main/dashboard.png?raw=true)
+![alt text](https://github.com/arsalfrlh/App-My-Library/blob/main/buku.png?raw=true)
+![alt text](https://github.com/arsalfrlh/App-My-Library/blob/main/laporan.png?raw=true)
+
