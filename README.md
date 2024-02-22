@@ -19,6 +19,8 @@ akun
    password = 123
   -username = pengguna
    password = 123
+   Note:
+   Jika terdapat error saat menambahkan/INSERT, cek di database dan lihat di bagian auto increment si IDnya berubah menjadi 0 hapus si IDnya, jika sudah. ubah Prosedur di database dan tambahkan tanda '' pada IDnya contoh Prosedur (pinjambuku) INSERT INTO peminjaman VALUES('peminjamanid',kodepinjam,userid,bukuid,dst) dan jalankan programnya. jika masih error hapus tanda '' di ID tadi dan jalankan programnya, ingat hanya ID primary key pada tabel itu saja yang diberi tanda ''
 
 ENG
 How to use
@@ -41,6 +43,8 @@ account
    password = 123
   -username = pengguna
    password = 123
+   Note:
+   If there is an error when adding/INSERT, check the database and look in the auto increment section, the ID changes to 0, delete the ID, if you have changed the procedure in the database and add a '' sign to the ID, for example Procedure (pinjambuku) INSERT INTO peminjaman VALUES('peminjamanid',kodepinjam,userid,bukuid,etc.) and run the program. if there is still an error, delete the '' sign on the ID and run the program, remember that only the primary key ID in that table is marke
 
 ![alt text](https://github.com/arsalfrlh/App-My-Library/blob/main/dashboard.png?raw=true)
 ![alt text](https://github.com/arsalfrlh/App-My-Library/blob/main/buku.png?raw=true)
