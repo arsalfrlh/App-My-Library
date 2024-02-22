@@ -131,7 +131,10 @@ include '../koneksi.php';
 
       
       <h2 align="center">Daftar Buku</h2>
-      <div class="table-responsive">
+      <div class="table-responsive"><br>
+      <form action="buku.php" method="get">
+      <input type="submit" value="Semua" class="btn btn-warning"> <input type="submit" value="Novel" class="btn btn-warning" name="novel"> <input type="submit" value="Fiksi" class="btn btn-warning" name="fiksi"> <input type="submit" value="Non Fiksi" class="btn btn-warning" name="nonfiksi"> <input type="submit" value="Pendidikan" class="btn btn-warning" name="pendidikan"> <input type="submit" value="Komik" class="btn btn-warning" name="komik"> <input type="submit" value="Biografi" class="btn btn-warning" name="biografi"> <input type="submit" value="Dongeng" class="btn btn-warning" name="dongeng">
+      </form>
       <table class="table table-striped table-sm">
         <thead>
             <th bgcolor="white">No</th>
@@ -150,7 +153,21 @@ include '../koneksi.php';
                   $cari = $_GET['cari'];
   
                   $query = "SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE judul like '%".$cari."%'";
-              } else{
+              }elseif(isset($_GET['novel'])){
+                $query ="SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE buku.kategoriid='6'";
+              }elseif(isset($_GET['fiksi'])){
+                $query ="SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE buku.kategoriid='3'";
+              }elseif(isset($_GET['nonfiksi'])){
+                $query ="SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE buku.kategoriid='4'";
+              }elseif(isset($_GET['pendidikan'])){
+                $query ="SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE buku.kategoriid='13'";
+              }elseif(isset($_GET['komik'])){
+                $query ="SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE buku.kategoriid='5'";
+              }elseif(isset($_GET['biografi'])){
+                $query ="SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE buku.kategoriid='12'";
+              }elseif(isset($_GET['dongeng'])){
+                $query ="SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid WHERE buku.kategoriid='11'";
+              }else{
                   $query = "SELECT * FROM buku LEFT JOIN kategoribuku ON buku.kategoriid = kategoribuku.kategoriid";
               }
               $result = mysqli_query($connect,$query);
