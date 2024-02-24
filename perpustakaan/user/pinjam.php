@@ -165,7 +165,7 @@ include '../koneksi.php';
             <td><?php echo $judul?></td>
             <td><?php echo $penulis?></td>
             <td><?php echo $tgl_pinjam?></td>
-            <td><?php echo $tgl_pengembalian?></td>
+            <td><?php if($status == 'dikembalikan'){echo $tgl_pengembalian; }?></td>
             <td><?php echo $jumlah?></td>
             <td>
               <?php
